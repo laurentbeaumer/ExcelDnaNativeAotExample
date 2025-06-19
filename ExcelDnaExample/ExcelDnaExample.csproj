@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<EnableDefaultCompileItems>False</EnableDefaultCompileItems>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="ExcelExample.cs" />
+    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="ExcelDna.AddIn" Version="1.8.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\NativeAotExample\NativeAotExample.csproj" />
+	</ItemGroup>
+
+</Project>
+        

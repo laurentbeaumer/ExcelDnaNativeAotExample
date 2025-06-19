@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8</TargetFramework>
+    <!--<RuntimeIdentifier>win-x64</RuntimeIdentifier>-->
+    <PublishAot>true</PublishAot>
+    <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>False</EnableDefaultEmbeddedResourceItems>
+    <IsPackable>false</IsPackable>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Example.cs" />
+  </ItemGroup>
+
+	<Target Name="AOT" AfterTargets="Publish">
+		<Copy SourceFiles="$(TargetDir)native\$(TargetFileName)" DestinationFiles="$(TargetDir)$(TargetFileName)" />
+		<Copy SourceFiles="$(TargetDir)native\$(TargetFileName)" DestinationFiles="$(TargetDir)..\$(TargetFileName)" />
+	</Target>
+
+</Project>

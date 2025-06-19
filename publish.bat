@@ -1,0 +1,1 @@
+cls && dotnet publish %1 -r win-x64 -c Release -property:SolutionDir=.\
