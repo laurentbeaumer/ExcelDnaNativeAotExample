@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net8.0-windows</TargetFramework>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<EnableDefaultCompileItems>False</EnableDefaultCompileItems>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
 
 
@@ -20,6 +22,5 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\NativeAotExample\NativeAotExample.csproj" />
 	</ItemGroup>
-
 </Project>
         

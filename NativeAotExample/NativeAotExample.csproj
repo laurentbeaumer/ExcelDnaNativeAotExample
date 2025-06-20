@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8</TargetFramework>
-    <!--<RuntimeIdentifier>win-x64</RuntimeIdentifier>-->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PublishAot>true</PublishAot>
     <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
     <EnableDefaultEmbeddedResourceItems>False</EnableDefaultEmbeddedResourceItems>
@@ -12,9 +12,8 @@
     <Compile Include="Example.cs" />
   </ItemGroup>
 
-	<Target Name="AOT" AfterTargets="Publish">
-		<Copy SourceFiles="$(TargetDir)native\$(TargetFileName)" DestinationFiles="$(TargetDir)$(TargetFileName)" />
-		<Copy SourceFiles="$(TargetDir)native\$(TargetFileName)" DestinationFiles="$(TargetDir)..\$(TargetFileName)" />
-	</Target>
-
+    <Target Name="AOT" AfterTargets="Publish" >
+	    <Copy SourceFiles="$(TargetDir)publish\$(TargetFileName)" DestinationFiles="$(TargetDir)$(TargetFileName)" />
+	    <Copy SourceFiles="$(TargetDir)$(TargetFileName)" DestinationFiles="$(TargetDir)\$(TargetFileName)" />
+    </Target>
 </Project>
